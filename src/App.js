@@ -6,17 +6,15 @@ import "./index.css";
 import Login from "./auth/Login"
 import ForgetPassword from "./auth/ForgetPassword"
 import ResetPassword from "./auth/ResetPassword"
-
-
-
-
+import Product from './components/Products/Product';
 function App() {
   return (
-    <div>
-      <Login/>
+    <>
+      {/* <Login/>
       <ForgetPassword/>
-      <ResetPassword/>
-    </div>
+      <ResetPassword/> */}
+      <Product />
+    </>
   );
 }
 
