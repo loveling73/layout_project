@@ -7,14 +7,23 @@ import Login from "./auth/Login"
 import ForgetPassword from "./auth/ForgetPassword"
 import ResetPassword from "./auth/ResetPassword"
 import Product from './components/Products/Product';
+import Depot from './components/Depots/Depot';
+import ModalNewDepot from './components/Depots/ModalNewDepot';
+
+
+
+
+
 function App() {
   return (
-    <>
-      {/* <Login/>
-      <ForgetPassword/>
-      <ResetPassword/> */}
-      <Product />
-    </>
+    <div>
+      {/* <Login/> */}
+      {/* <ForgetPassword/> */}
+      {/* <ResetPassword/> */}
+      {/* <Product/> */}
+      <Depot/>
+      {/* <ModalNewDepot/> */}
+    </div>
   );
 }
 

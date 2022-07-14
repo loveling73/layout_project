@@ -1,14 +1,46 @@
-import { EyeOutlined,AndroidOutlined, BarChartOutlined, BellOutlined, DownOutlined, MenuFoldOutlined, SearchOutlined, DeleteOutlined, EditOutlined, FolderViewOutlined, PlusOutlined, PieChartOutlined, SlidersOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { EyeOutlined, AndroidOutlined, BarChartOutlined, BellOutlined, DownOutlined, MenuFoldOutlined, SearchOutlined, DeleteOutlined, EditOutlined, FolderViewOutlined, PlusOutlined, PieChartOutlined, SlidersOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Col, Image, Layout, Menu, Row } from 'antd';
-import React from 'react';
+import React, {useState}from 'react';
 import { Button } from 'antd';
-import "./index.css";
 import { Input } from 'antd';
-import { Space, Table, Tag } from 'antd'
+import { Space, Table, Tag,Modal } from 'antd'
+
 
 
 const { Header, Content, Footer, Sider } = Layout;
-const data = [
+
+const data1 = [
+    {
+        key: '1',
+        name: 'John Brown',
+        age: 32,
+        address: 'New York No. 1 Lake Park',
+        tags: ['Đang hoạt động', 'developer'],
+    },
+    {
+        key: '2',
+        name: 'Jim Green',
+        age: 42,
+        address: 'London No. 1 Lake Park',
+        tags: ['Đang hoạt động'],
+    },
+    {
+        key: '3',
+        name: 'Joe Black',
+        age: 32,
+        address: 'Sidney No. 1 Lake Park',
+        tags: ['cool', 'teacher'],
+    },
+    {
+        key: '4',
+        name: 'Joe Black',
+        age: 32,
+        address: 'Sidney No. 1 Lake Park',
+        tags: ['Không hoạt động',],
+    },
+];
+
+const data2 = [
     {
         key: '1',
         name: 'John Brown',
@@ -81,7 +113,59 @@ const data = [
     },
 
 ];
-const columns = [
+const columns1 = [
+    {
+        title: 'STT',
+        dataIndex: 'name',
+        key: 'name',
+
+    },
+    {
+        title: 'Mã kho',
+        dataIndex: 'age',
+        key: 'age',
+    },
+    {
+        title: 'Tên kho',
+        dataIndex: 'address',
+        key: 'address',
+    },
+    {
+        title: 'Trạng Thái',
+        key: 'tags',
+        dataIndex: 'tags',
+        render: (_, { tags }) => (
+            <>
+                {tags.map((tag) => {
+                    let color = tag.length > 5 ? 'geekblue' : 'green';
+
+                    if (tag === 'Không hoạt động') {
+                        color = 'volcano';
+                    }
+
+                    return (
+                        <Tag color={color} key={tag}>
+                            {tag.toUpperCase()}
+                        </Tag>
+                    );
+                })}
+            </>
+        ),
+    },
+    {
+        ttitle: 'Thao tác',
+        key: 'action',
+        render: (_, record) => (
+            <Space size="middle">
+                <EyeOutlined  className='p-1 rounded-full bg-orange-700/70 text-white' />
+                <EditOutlined className='p-1 rounded-full bg-green-700/70 text-white' />
+                <DeleteOutlined className='p-1 rounded-full bg-red-700/70 text-white' />
+            </Space>
+        ),
+    }
+];
+
+const columns2 = [
     {
         title: 'STT',
         dataIndex: 'name',
@@ -137,6 +221,7 @@ const columns = [
         ),
     },
 ];
+
 const arrayitems = [
     {
         label: 'Tổng quan',
@@ -165,12 +250,27 @@ const arrayitems = [
     },
 ]
 
-const Product = () => (
+const Depot = () => {
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+    
+    return (
     <>
-        <Layout style={{ minHeight: 800 }}>
+        <Layout style={{ minHeight: 800 }} >
 
             <Sider
-
+                onChange={(affixed) => console.log(affixed)}
                 breakpoint="lg"
                 collapsedWidth="0"
                 onBreakpoint={broken => {
@@ -190,7 +290,7 @@ const Product = () => (
                             preview={{ visible: false }}
                             width={40}
                             src="https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp"
-
+                            
                         />
                     </Col>
                 </Row>
@@ -215,7 +315,7 @@ const Product = () => (
                         <div className="basis-1/4 mx-4 my-3 flex align-center items-center">
 
                             <MenuFoldOutlined style={{ fontSize: '25px' }} className="mx-2 my-3" />
-                            <span className="mx-2" style={{ fontSize: '20px', fontWeight: 800 }}>Danh sách sản phẩm</span>
+                            <span className="mx-2" style={{ fontSize: '20px', fontWeight: 800 }}>Danh mục kho</span>
                         </div>
 
                         <div className="basis-1/4 mx-4 my-3 flex items-center content-end "  >
@@ -241,22 +341,39 @@ const Product = () => (
 
                     <Input placeholder="Mã Hàng" style={{ width: 280, height: 50, marginLeft: '10px' }} />
                     <Input placeholder="Tên Hàng" style={{ width: 550, height: 50, marginLeft: '30px' }} />
-                    <Button type="primary flex justify-center items-center" className=' bg-slate-700' style={{ width: 260, height: 50, marginLeft: '10px' }}> <SearchOutlined /><span>Tìm Kiếm</span></Button>
-                    <Button type="primary flex justify-center items-center" className='bg-blue-700' style={{ width: 260, height: 50, marginLeft: '10px' }}><PlusOutlined /> <span>Tạo sản phẩm</span></Button>
-
+                    <Button type="primary flex justify-center items-center" className=' bg-slate-700' style={{ width: 260, height: 50, marginLeft: '10px' }}> <SearchOutlined />
+                        <span>Tìm Kiếm</span>
+                    </Button>
+                    <Button type="primary flex justify-center items-center" className='bg-blue-700' style={{ width: 260, height: 50, marginLeft: '10px' }} onClick={showModal}><PlusOutlined /> 
+                        <span>Tạo sản phẩm</span>
+                    </Button>
+                    <Modal title="Tạo kho mới" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                        <p>Mã kho</p>
+                        <Input className="" size="large" placeholder="Mã kho" />   
+                        <p className="mt-5" >Tên kho</p>
+                        <Input className="" size="large" placeholder="Tên kho" />   
+                    </Modal>
 
                 </Content>
 
                 <Content style={{ margin: '24px 16px 0' }}>
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-                        <Table columns={columns} dataSource={data} />;
+                        <Table columns={columns1} dataSource={data1} />;
                     </div>
                 </Content>
+
+                <Content style={{ margin: '24px 16px 0' }}>
+                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                        <Table columns={columns2} dataSource={data2} />;
+                    </div>
+                </Content>
+                <div> Có {data2.length} sản phẩm</div>
                 
                 <Footer style={{ textAlign: 'center' }}> Nghiant36 </Footer>
             </Layout>
         </Layout>
     </>
-);
+    );
+}
 
-export default Product;
+export default Depot;
