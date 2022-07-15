@@ -13,16 +13,15 @@ import ModalNewDepot from './components/Depots/ModalNewDepot';
 
 
 
-
 function App() {
   return (
     <div>
       {/* <Login/> */}
       {/* <ForgetPassword/> */}
       {/* <ResetPassword/> */}
-      {/* <Product/> */}
-      <Depot/>
-      {/* <ModalNewDepot/> */}
+      <Product />
+      {/* <Depot /> */}
+      {/* <ModalNewDepot /> */}
     </div>
   );
 }
