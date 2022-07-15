@@ -7,7 +7,7 @@ function SideBar(props) {
     return (
         <>
             <Sider
-                style={{ height: '780px' }}
+                
                 breakpoint="lg"
                 collapsedWidth="0"
                 onBreakpoint={broken => {
@@ -43,8 +43,10 @@ function SideBar(props) {
                             key: String(index + 1),
                             icon: React.createElement(item.icon),
                             label: item.label,
+                           
                         }),
                     )}
+                    
                 />
             </Sider>
         </>

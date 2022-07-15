@@ -2,7 +2,7 @@ import { BellOutlined, DeleteOutlined, DownOutlined, EditOutlined, EyeOutlined, 
 import { Button, Image, Input, Layout, Space, Table, Tag } from 'antd';
 import React from 'react';
 import avatar from '../../assets/image/avatar.jpg';
-import { arrayitems, data, columns } from '../../utils/fakeData';
+import { arrayitems, data, columns } from '../../utils/fakeDataM';
 import SideBar from '../../components/SideBar/SideBar';
 import "./index.css";
 const { Header, Content, Footer } = Layout;
