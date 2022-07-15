@@ -2,8 +2,8 @@ import { BellOutlined, DeleteOutlined, DownOutlined, EditOutlined, EyeOutlined, 
 import { Button, Image, Input, Layout, Space, Table, Tag } from 'antd';
 import React from 'react';
 import avatar from '../../assets/image/avatar.jpg';
-import { arrayitems, data, columns } from '../../auth/utils/fakeData';
-import SideBar from '../SideBar/SideBar';
+import { arrayitems, data, columns } from '../../utils/fakeData';
+import SideBar from '../../components/SideBar/SideBar';
 import "./index.css";
 const { Header, Content, Footer } = Layout;
 
@@ -41,7 +41,7 @@ const Product = () => (
 
                     </div>
                 </Header>
-                <Content className="flex align-center items-centent " style={{ padding: 0, height: 40, marginTop: '15px' }}>
+                <Content className="flex align-center items-centent " style={{ padding: 0, height: 40, marginTop: '15px', marginBottom: '50px' }}>
 
                     <Input placeholder="Mã Hàng" style={{ width: 280, height: 50, marginLeft: '10px' }} />
                     <Input placeholder="Tên Hàng" style={{ width: 550, height: 50, marginLeft: '30px' }} />
@@ -51,13 +51,13 @@ const Product = () => (
 
                 </Content>
 
-                <Content style={{ margin: '24px 16px 0' }}>
-                    <div className="site-layout-background overflow-auto flex-shrink-0" style={{ padding: 24, height: '500px' }}>
-                        <Table columns={columns} dataSource={data} />;
+                <Content style={{ marginBottom: '30px' }}>
+                    <div className="site-layout-background  flex-shrink-0" style={{ padding: 24, height: '500px' }}>
+                        <Table columns={columns} dataSource={data} />
                     </div>
                 </Content>
 
-                <Footer style={{ textAlign: 'center' }}> ManhPD12 </Footer>
+                <Footer style={{ textAlign: 'center', marginTop: '100px' }} > ManhPD12 </Footer>
 
 
             </Layout>

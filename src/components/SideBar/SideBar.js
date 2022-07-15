@@ -7,7 +7,7 @@ function SideBar(props) {
     return (
         <>
             <Sider
-
+                style={{ height: '780px' }}
                 breakpoint="lg"
                 collapsedWidth="0"
                 onBreakpoint={broken => {
