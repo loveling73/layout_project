@@ -1,16 +1,17 @@
-import { BellOutlined, DeleteOutlined, DownOutlined, EditOutlined, EyeOutlined, MenuFoldOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
-import { Button, Image, Input, Layout, Space, Table, Tag } from 'antd';
+import { BellOutlined, DownOutlined, MenuFoldOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
+import { Image, Input, Layout, Table } from 'antd';
 import React from 'react';
 import avatar from '../../assets/image/avatar.jpg';
-import { arrayitems, data, columns } from '../../utils/fakeDataM';
+import Button from '../../components/Button/Button';
 import SideBar from '../../components/SideBar/SideBar';
+import { arrayitems, columns, data } from '../../utils/fakeDataM';
 import "./index.css";
 const { Header, Content, Footer } = Layout;
 
 
 const Product = () => (
     <>
-        <Layout style={{ height: '100vh' }}>
+        <Layout style={{ height: '770px' }}>
             <SideBar array={arrayitems} />
             <Layout className='flex flex-1'>
 
@@ -19,7 +20,7 @@ const Product = () => (
                         <div className="basis-1/4 mx-4 my-3 flex align-center items-center">
 
                             <MenuFoldOutlined style={{ fontSize: '25px' }} className="mx-2 my-3" />
-                            <span className="mx-2" style={{ fontSize: '20px', fontWeight: 800 }}>Danh sách sản phẩm</span>
+                            <span className="mx-5" style={{ fontSize: '20px', fontWeight: 600 }}>Danh sách sản phẩm</span>
                         </div>
 
                         <div className="basis-1/4 mx-4 my-3 flex items-center content-end "  >
@@ -44,9 +45,9 @@ const Product = () => (
                 <Content className="flex align-center items-centent " style={{ padding: 0, height: 40, marginTop: '15px', marginBottom: '50px' }}>
 
                     <Input placeholder="Mã Hàng" style={{ width: 280, height: 50, marginLeft: '10px' }} />
-                    <Input placeholder="Tên Hàng" style={{ width: 550, height: 50, marginLeft: '30px' }} />
-                    <Button type="primary flex justify-center items-center" className=' bg-slate-700' style={{ width: 260, height: 50, marginLeft: '10px' }}> <SearchOutlined /><span>Tìm Kiếm</span></Button>
-                    <Button type="primary flex justify-center items-center" className='bg-blue-700' style={{ width: 260, height: 50, marginLeft: '10px' }}><PlusOutlined /> <span>Tạo sản phẩm</span></Button>
+                    <Input placeholder="Tên Hàng" style={{ width: 400, height: 50, marginLeft: '30px', marginRight: '40px' }} />
+                    <Button secondary leftIcon={<SearchOutlined />}> Tìm kiếm</Button>
+                    <Button primary leftIcon={<PlusOutlined />}> Tạo sản phẩm</Button>
 
 
                 </Content>

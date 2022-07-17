@@ -50,9 +50,9 @@ const columns = [
         key: 'action',
         render: (_, record) => (
             <Space size="middle">
-                <EyeOutlined className='p-1 rounded-full bg-orange-700/70 text-white' />
-                <EditOutlined className='p-1 rounded-full bg-green-700/70 text-white' />
-                <DeleteOutlined className='p-1 rounded-full bg-red-700/70 text-white' />
+                <EyeOutlined className='p-1 rounded-full bg-orange-400 text-white' />
+                <EditOutlined className='p-1 rounded-full bg-green-600 text-white' />
+                <DeleteOutlined className='p-1 rounded-full bg-red-600 text-white' />
             </Space>
         ),
     },
