@@ -3,6 +3,7 @@ import { Image, Input, Layout, Table } from 'antd';
 import React from 'react';
 import avatar from '../../assets/image/avatar.jpg';
 import Button from '../../components/Button/Button';
+import Modals from '../../components/Modals';
 import SideBar from '../../components/SideBar/SideBar';
 import { arrayitems, columns, data } from '../../utils/fakeDataM';
 import "./index.css";
@@ -32,6 +33,7 @@ const Product = () => (
                                 src={avatar}
 
                             />
+                            <Modals title={'Tạo kho mới '} input={['Mã kho', 'Tên kho']}></Modals>
                             <span className="grid grid-cols-1 mx-5">
                                 <span style={{ fontSize: '13px' }}>Phan Đức Mạnh</span>
                                 <span style={{ fontSize: '10px' }}>Quản trị viên</span>
@@ -48,6 +50,7 @@ const Product = () => (
                     <Input placeholder="Tên Hàng" style={{ width: 400, height: 50, marginLeft: '30px', marginRight: '40px' }} />
                     <Button secondary leftIcon={<SearchOutlined />}> Tìm kiếm</Button>
                     <Button primary leftIcon={<PlusOutlined />}> Tạo sản phẩm</Button>
+
 
 
                 </Content>
