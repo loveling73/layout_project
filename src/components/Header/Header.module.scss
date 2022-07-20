@@ -1,0 +1,60 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.parent {
+    position: relative;
+}
+
+.dot {
+    position: absolute;
+    background-color: red;
+    border-radius: 100%;
+    height: 8px;
+    width: 8px;
+    right: 33px;
+    top: 7px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.user {
+    display: flex;
+    width: 248px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.info {
+    margin-left: 16px;
+    flex: 1 0 0;
+    text-align: left;
+}
+
+.info span {
+    display: block;
+    flex: 1 1 1;
+}
+
+.avatar {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+}
+
+.downIcon {
+    justify-self: flex-end;
+}
