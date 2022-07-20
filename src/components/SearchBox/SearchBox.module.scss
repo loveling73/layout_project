@@ -1,0 +1,23 @@
+.small {
+    width: 280px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.large {
+    width: 400px;
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 1150px) {
+    .small {
+        width: 120px;
+
+    }
+
+    .large {
+        width: 180px;
+    }
+}

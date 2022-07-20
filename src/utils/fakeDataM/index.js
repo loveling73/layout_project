@@ -22,27 +22,28 @@ const columns = [
         title: 'Đơn vị',
         key: 'tags',
         dataIndex: 'tags',
-        render: (_, { tags }) => (
-            <>
-                {tags.map((tag) => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
+        //     render: (_, { tags }) => (
+        //         <>
+        //             {tags.map((tag) => {
+        //                 let color = tag.length > 2 ? 'geekblue' : 'green';
 
-                    if (tag === 'loser') {
-                        color = 'volcano';
-                    }
+        //                 if (tag === 'loser') {
+        //                     color = 'volcano';
+        //                 }
 
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
+        //                 return (
+        //                     <Tag color={color} key={tag}>
+        //                         {tag.toUpperCase()}
+        //                     </Tag>
+        //                 );
+        //             })}
+        //         </>
+        //     ),
+        // },
     },
     {
         title: 'Ngày tạo',
-        dataIndex: 'address',
+        dataIndex: 'date',
         key: 'address',
     },
     {
@@ -60,79 +61,93 @@ const columns = [
 const arrayitems = [
     {
         label: 'Tổng quan',
-        icon: AndroidOutlined
+        icon: AndroidOutlined,
+        tag: 'overall'
     },
     {
         label: 'Kho',
         icon: BarChartOutlined
+        , tag: 'overall'
     },
     {
         label: 'Sản phẩm',
-        icon: SlidersOutlined
+        icon: SlidersOutlined,
+        tag: 'overall'
     },
     {
         label: 'Kinh doanh',
-        icon: PieChartOutlined
+        icon: PieChartOutlined,
+        tag: 'overall'
     }, {
         label: 'Nhân viên',
-        icon: UploadOutlined
+        icon: UploadOutlined,
+        tag: 'overall'
     }, {
         label: 'Báo cáo',
-        icon: UserOutlined
+        icon: UserOutlined,
+        tag: 'overall'
     }, {
         label: 'Bảo quản',
-        icon: VideoCameraOutlined
+        icon: VideoCameraOutlined,
+        tag: 'overall'
     },
 ]
 const data = [
     {
         key: '1',
-        name: 'John Brown',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
+        name: '1',
+        age: 'T001',
+        address: 'Thép Việt Pháp Hình chữ U',
+        tags: 'Cây',
+        date: '27/06/2022 22:15:30'
     },
     {
         key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
+        name: '2',
+        age: 'T001',
+        address: 'Thép Việt Pháp Hình chữ U',
+        tags: 'Cây',
+        date: '27/06/2022 22:15:30'
     },
     {
         key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
+        name: '3',
+        age: 'T001',
+        address: 'Thép Việt Pháp Hình chữ U',
+        tags: 'Cây',
+        date: '27/06/2022 22:15:30'
     },
     {
         key: '4',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
+        name: '4',
+        age: 'T001',
+        address: 'Thép Việt Pháp Hình chữ U',
+        tags: 'Cây',
+        date: '27/06/2022 22:15:30'
     },
     {
         key: '5',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
+        name: '5',
+        age: 'T001',
+        address: 'Thép Việt Pháp Hình chữ U',
+        tags: 'Cây',
+        date: '27/06/2022 22:15:30'
     },
     {
         key: '6',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
+        name: '6',
+        age: 'T001',
+        address: 'Thép Việt Pháp Hình chữ U',
+        tags: 'Cây',
+        date: '27/06/2022 22:15:30'
     },
     {
         key: '7',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
+        name: '7',
+        age: 'T001',
+        address: 'Thép Việt Pháp Hình chữ U',
+        tags: 'Cây',
+        date: '27/06/2022 22:15:30'
     },
 
 

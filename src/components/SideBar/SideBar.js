@@ -7,7 +7,7 @@ function SideBar(props) {
     return (
         <>
             <Sider
-                
+
                 breakpoint="lg"
                 collapsedWidth="0"
                 onBreakpoint={broken => {
@@ -39,14 +39,14 @@ function SideBar(props) {
                     mode="inline"
                     defaultSelectedKeys={['8']}
                     items={props.array.map(
-                        (item, index) => ({
+                        (item, index, tag) => ({
                             key: String(index + 1),
                             icon: React.createElement(item.icon),
                             label: item.label,
-                           
+
                         }),
                     )}
-                    
+
                 />
             </Sider>
         </>

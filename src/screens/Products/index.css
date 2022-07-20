@@ -15,3 +15,9 @@
 .sidebar {
     background-color: #2C3A57;
 }
+
+@media only screen and (max-width: 1150px) {
+    .display {
+        display: none;
+    }
+}
