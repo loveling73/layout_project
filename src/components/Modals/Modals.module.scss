@@ -13,15 +13,17 @@
     background: #1890FF;
     border-radius: 4px;
 }
+
 span.a {
     width: 100px;
     height: 100px;
     padding: 5px;
     color: rgb(255, 0, 0);
-  }
+}
+
 .messenge {
     font-weight: 500;
-    font-size:18px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -29,9 +31,9 @@ span.a {
     width: 472px;
     margin-top: 15px;
 }
-    
+
 .action_btn {
-    width: 236px;
+    width: 100%;
     margin-left: 5px;
     margin-right: 5px;
 }

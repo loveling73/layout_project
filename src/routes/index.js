@@ -1,12 +1,14 @@
 
 // Pages
-import Login from '../screens/auth/Login';
+import Modals from '../components/Modals';
 import ForgetPassword from '../screens/auth/ForgetPassword';
+import Login from '../screens/auth/Login';
 import ResetPassword from '../screens/auth/ResetPassword';
 import Depot from '../screens/Depots/Depot';
 import Product from '../screens/Products/Product';
-import Modals from '../components/Modals';
-
+import Store from '../screens/Store';
+import Danhmuc from '../screens/Store/listStore';
+import XuatKho from '../screens/Store/XuatKho';
 // Public routes
 const publicRoutes = [
     { path: '/', component: Login },
@@ -15,6 +17,9 @@ const publicRoutes = [
     { path: '/products', component: Product },
     { path: '/depots', component: Depot },
     { path: '/modals', component: Modals },
+    { path: '/stores', component: Danhmuc },
+    { path: '/stores/Nhap', component: Store },
+    { path: '/stores/Xuat', component: XuatKho }
 ];
 
 const privateRoutes = [];
