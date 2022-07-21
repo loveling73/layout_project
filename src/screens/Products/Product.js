@@ -35,8 +35,16 @@ const Product = () => {
                         <Button primary leftIcon={<PlusOutlined />} onClick={handleChange}> Tạo sản phẩm</Button>
 
 
-
                     </Content>
+
+                    {showModal&&<Modals                       
+                        title={'Tạo kho mới'} 
+                        input={[]}
+                        messenge={'Chọn mặt hàng nào'}
+                        content={['Chọn mặt hàng A', ' Chọn mặt hàng B']}
+                        buttonContent={[]}>
+                    </Modals>
+                    } 
 
                     <Content style={{ marginBottom: '30px' }}>
                         <div className="site-layout-background  flex-shrink-0" style={{ padding: 24, height: '500px' }}>

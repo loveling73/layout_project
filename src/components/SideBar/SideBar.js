@@ -1,7 +1,53 @@
 import { Col, Image, Layout, Menu, Row } from 'antd';
+import { ShopOutlined ,BarChartOutlined, RestOutlined,UserOutlined,RiseOutlined,FileDoneOutlined,SettingOutlined,ReconciliationOutlined} from '@ant-design/icons';
+
 import React from 'react';
+
 const { Sider } = Layout;
 
+const item = [
+    getItem('Tổng quan', '1', <BarChartOutlined />),
+    getItem('Kho', '2', <ShopOutlined />, 
+        [   
+            getItem('Danh mục kho', '3'),
+            getItem('Xuất kho', '4'),
+            getItem('Nhập kho', '5'),
+            getItem('Kiểm kê', '6')
+        ]),
+    getItem('Sản phẩm', '7', <RestOutlined />),
+    getItem('Kinh doanh', '8', <RiseOutlined />,
+        [
+            getItem('Khách hàng', '9'),
+            getItem('Báo giá', '10'),
+            getItem('Đơn đặt hàng', '11'),
+            getItem('Đơn bán hàng', '12'),
+        ]),
+    
+    getItem('Kế toán', '13', <FileDoneOutlined />,
+        [
+        getItem('Phiếu thu', '14'),
+        getItem('Phiếu chi', '15'),]),
+
+    getItem('Báo cáo', '16', <ReconciliationOutlined />,
+        [   
+            getItem('Đơn bán hàng', '17'),
+            getItem('Đơn đặt hàng', '18'),
+            getItem('Nợ công đơn hàng', '19'),
+            getItem('Đơn bán hàng', '20'),
+        ]),
+    getItem('Nhân viên', '21', <UserOutlined />),
+    getItem('Cài đặt', '22', <SettingOutlined />),
+    ]
+
+function getItem(label, key, icon, children, type) {
+    return {
+      key,
+      icon,
+      children,
+      label,
+      type,
+    };
+  }
 
 function SideBar(props) {
     return (
@@ -31,22 +77,13 @@ function SideBar(props) {
                     </Col>
 
 
-
                 </Row>
                 <Menu
                     className='sidebar'
                     theme="dark"
                     mode="inline"
-                    defaultSelectedKeys={['8']}
-                    items={props.array.map(
-                        (item, index, tag) => ({
-                            key: String(index + 1),
-                            icon: React.createElement(item.icon),
-                            label: item.label,
-
-                        }),
-                    )}
-
+                    items={item}
+                        
                 />
             </Sider>
         </>
