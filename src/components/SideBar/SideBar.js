@@ -1,92 +1,128 @@
 import { Col, Image, Layout, Menu, Row } from 'antd';
-import { ShopOutlined ,BarChartOutlined, RestOutlined,UserOutlined,RiseOutlined,FileDoneOutlined,SettingOutlined,ReconciliationOutlined} from '@ant-design/icons';
+import { ShopOutlined, BarChartOutlined, RestOutlined, UserOutlined, RiseOutlined, FileDoneOutlined, SettingOutlined, ReconciliationOutlined, DownOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { AiOutlineDown } from 'react-icons/ai'
+import { BsDot } from 'react-icons/bs'
+// import './SiderBar.css';
 
-import React from 'react';
 
 const { Sider } = Layout;
 
-const item = [
-    getItem('Tổng quan', '1', <BarChartOutlined />),
-    getItem('Kho', '2', <ShopOutlined />, 
-        [   
-            getItem('Danh mục kho', '3'),
-            getItem('Xuất kho', '4'),
-            getItem('Nhập kho', '5'),
-            getItem('Kiểm kê', '6')
-        ]),
-    getItem('Sản phẩm', '7', <RestOutlined />),
-    getItem('Kinh doanh', '8', <RiseOutlined />,
-        [
-            getItem('Khách hàng', '9'),
-            getItem('Báo giá', '10'),
-            getItem('Đơn đặt hàng', '11'),
-            getItem('Đơn bán hàng', '12'),
-        ]),
-    
-    getItem('Kế toán', '13', <FileDoneOutlined />,
-        [
-        getItem('Phiếu thu', '14'),
-        getItem('Phiếu chi', '15'),]),
+const Menus = [
+    {   
+        tilte: 'Tổng quan',
+        icon: BarChartOutlined
+    },
+    {
+        tilte: 'Kho',
+        icon: ShopOutlined,
+        submenu: true,
+        submenuItems: [
+            { tilte: 'Danh mục kho' },
+            { tilte: 'Xuất kho' },
+            { tilte: 'Nhập kho' },
+            { tilte: 'Kiểm kê' },
+        ]
+    },
+    {
+        tilte: 'Sản phẩm',
+        icon: RestOutlined
+    },
+    {
+        tilte: 'Kinh doanh',
+        icon: RiseOutlined,
+        submenu: true,
+        submenuItems: [
+            { tilte: 'Khách hàng' },
+            { tilte: 'Báo giá' },
+            { tilte: 'Đơn đặt hàng' },
+            { tilte: 'Đơn bán hàng' },
+        ]
+    },
+    {
+        tilte: 'Kế toán',
+        icon: FileDoneOutlined,
+        submenu: true,
+        submenuItems: [
+            { tilte: 'Phiếu thu' },
+            { tilte: 'Phiếu chi' },
+        ]
+    },
+    {
+        tilte: 'Báo cáo',
+        icon: ReconciliationOutlined,
+        submenu: true,
+        submenuItems: [
+            { tilte: 'Đơn bán hàng' },
+            { tilte: 'Đơn đặt hàng' },
+            { tilte: 'Nợ công đơn hàng' },
+            { tilte: 'Nợ công khách hàng' },
+        ]
+    },
+    {
+        tilte: 'Nhân viên',
+        icon: UserOutlined
+    },
+    {
+        tilte: 'Cài đặt',
+        icon: SettingOutlined
+    },
+]
 
-    getItem('Báo cáo', '16', <ReconciliationOutlined />,
-        [   
-            getItem('Đơn bán hàng', '17'),
-            getItem('Đơn đặt hàng', '18'),
-            getItem('Nợ công đơn hàng', '19'),
-            getItem('Đơn bán hàng', '20'),
-        ]),
-    getItem('Nhân viên', '21', <UserOutlined />),
-    getItem('Cài đặt', '22', <SettingOutlined />),
-    ]
-
-function getItem(label, key, icon, children, type) {
-    return {
-      key,
-      icon,
-      children,
-      label,
-      type,
-    };
-  }
 
 function SideBar(props) {
+    const [submenuOpen, setSubmenuOpen] = useState(false);
     return (
         <>
-            <Sider
+        <div className="bg-dark-purple h-screen p-5 pt-8 w-72" >
+            <Row>
+                <Col span={1}>
+                    <Image className='rounded-full mt-3'
+                        preview={{ visible: false }}
+                        width={40}
+                        src="https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-1/282647232_3372145673013688_1051696226724793886_n.jpg?stp=dst-jpg_p240x240&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=afQt19GgwJ4AX_-egDC&_nc_ht=scontent.fhan3-1.fna&oh=00_AT_vN3BSoIL8KgPZL6enPTcEqgRkH2FsEo7hkL6Bps-YgA&oe=62D5D37C"
 
-                breakpoint="lg"
-                collapsedWidth="0"
-                onBreakpoint={broken => {
-                    console.log(broken);
-                }}
-                onCollapse={(collapsed, type) => {
-                    console.log(collapsed, type);
-                }}
-            >
-                <Row>
-                    <Col span={1}>
-                        <Image className='rounded-full mt-3'
-                            preview={{ visible: false }}
-                            width={40}
-                            src="https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-1/282647232_3372145673013688_1051696226724793886_n.jpg?stp=dst-jpg_p240x240&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=afQt19GgwJ4AX_-egDC&_nc_ht=scontent.fhan3-1.fna&oh=00_AT_vN3BSoIL8KgPZL6enPTcEqgRkH2FsEo7hkL6Bps-YgA&oe=62D5D37C"
+                    />
+                </Col>
+                <Col span={12} push={6}>
+                    <h1 className="text-stone-300 pt-5"> Đức Mạnh </h1>
 
-                        /></Col>
-                    <Col span={12} push={6}>
-                        <h1 className="text-stone-300 pt-5"> Đức Mạnh </h1>
+                </Col>
+            </Row>
+            <hr className="-mx-5 mt-8"></hr>
+            <ul className="pt-2">
+                {Menus.map((menu, index) => (
+                    <>
+                        <li key={index} className="relative text-gray-300 text-md flex item-center cursor-pointer gap-x-4 p-2 hover:bg-blue-white rounded-md mt-2">
+                            <span className="block float-left"> {React.createElement(menu.icon)} </span>
+                            <span className="mt-1 font-medium "> {menu.tilte} </span>
 
-                    </Col>
+                            {menu.submenu && (
+                                <div className="absolute inset-y-5 right-2">
+                                    <AiOutlineDown className={`${submenuOpen && "rotate-180"}`} onClick={() =>
+                                        setSubmenuOpen(!submenuOpen)} />
+                                </div>
+                            )}
+                        </li>
+                        {menu.submenu && submenuOpen && (
+                            <ul>
+                                {menu.submenuItems.map((submenuItems, index) => (
+                                    <div className="">
+                                        <li key={index} className="text-gray-300 text-base flex item-center cursor-pointer gap-x-4 p-2 hover:bg-blue-white rounded-md ml-2">
+                                            <span> <BsDot /> </span>
+                                            {submenuItems.tilte}
+                                        </li>
+                                    </div>
+                                ))},
+                            </ul>
+                        )}
+                    </>
+                ))}
 
+            </ul>
 
-                </Row>
-                <Menu
-                    className='sidebar'
-                    theme="dark"
-                    mode="inline"
-                    items={item}
-                        
-                />
-            </Sider>
-        </>
+        </div>
+                        </>
     );
 }
 
