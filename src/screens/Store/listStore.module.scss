@@ -1,6 +1,6 @@
 .product {
     position: absolute;
-    bottom: 30px;
+    bottom: -200px;
     left: 230px;
 
 
@@ -8,6 +8,36 @@
 
 .number {
     color: blue;
+}
+
+.active {
+    width: 107px;
+    height: 20px;
+
+    font-family: 'Averta';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    /* identical to box height, or 20px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* Secondary/Green */
+
+    color: #09B530;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    padding: 4px;
+    border: 1px solid #09B530;
+    border-radius: 5%;
 }
 
 .notify {

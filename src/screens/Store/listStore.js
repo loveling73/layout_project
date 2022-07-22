@@ -1,4 +1,4 @@
-import { PlusOutlined, SearchOutlined } from '@ant-design/icons';
+import { PlusOutlined, SearchOutlined, DownOutlined, UpOutlined, EyeOutlined, EditOutlined, DeleteOutlined, PlusCircleOutlined, CloseOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
 import avatar from '../../assets/image/avatar.jpg';
 import Button from '../../components/Button/Button';
@@ -7,8 +7,9 @@ import Modals from '../../components/Modals';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import SideBar from '../../components/SideBar/SideBar';
 import { array3, columns3, data3 } from '../../utils/fakeData';
-import styles from './Store.module.scss'
-import { Radio, Space, Table, Tag, Layout } from 'antd';
+import styles from './listStore.module.scss'
+import { Radio, Space, Table, Tag, Layout, Modal } from 'antd';
+import { columns4, data4 } from '../../utils/fakeDanhmuc';
 
 const { Content, Footer } = Layout;
 
@@ -17,11 +18,16 @@ const Danhmuc = () => {
     function handleChange() {
         setShowModal(!showModal);
     }
+    function showDelete() {
+        setShowModal1(!showModal1);
+    }
+    const [showModal1, setShowModal1] = useState(false);
+
 
     const columns = [
         {
-            title: 'STT',
-            dataIndex: 'name',
+            title: '',
+            dataIndex: 'key',
             key: 'name',
 
         },
@@ -43,63 +49,51 @@ const Danhmuc = () => {
         },
         {
             title: 'Trạng thái',
-            dataIndex: 'address',
+            dataIndex: 'tags',
             key: 'address',
         },
         {
             title: 'Thao tác',
-            key: 'tags',
-            dataIndex: 'tags',
-            render: (tags) => (
-                <span>
-                    {tags.map((tag) => {
-                        let color = tag.length > 5 ? 'geekblue' : 'green';
-
-                        if (tag === 'loser') {
-                            color = 'volcano';
-                        }
-
-                        return (
-                            <Tag color={color} key={tag}>
-                                {tag.toUpperCase()}
-                            </Tag>
-                        );
-                    })}
-                </span>
-            ),
-        },
-        {
-            title: 'Action',
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <a>Invite {record.name}</a>
-                    <a>Delete</a>
+                    <EyeOutlined className='p-1 rounded-full bg-orange-400 text-white' />
+                    <EditOutlined className='p-1 rounded-full bg-green-600 text-white' />
+                    <DeleteOutlined className='p-1 rounded-full bg-red-600 text-white' onClick={error} />
                 </Space>
             ),
         },
+
     ];
     const data = [
         {
-            key: '1',
+            key: <DownOutlined style={{ color: 'blue' }} />,
             name: '1',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
-            tags: ['nice', 'developer'],
+            age: 'KH001HN',
+            address: 'Kho 01 Hà Đông - Hà Nội',
+            tags: <span className={styles.active}>Đang hoạt động</span>,
         },
         {
-            key: '2',
+            key: <UpOutlined style={{ color: 'blue' }} />,
             name: '2',
-            age: 42,
-            address: 'London No. 1 Lake Park',
-            tags: ['loser'],
+            age: 'KH001HN',
+            address: 'Kho 01 Hà Đông - Hà Nội',
+            tags: <span className={styles.active}>Đang hoạt động</span>,
         },
 
     ];
+    const error = () => {
+        Modal.error({
+            title: 'Xóa kho',
+            content: 'Kho hàng có thể có các đơn nhận ,xuất hàng.Bạn có chắc chắn muốn xóa Kho 01 Hà Đông- Hà Nội này ?',
+            okText: 'Xóa',
+            cancelButtonProps: 'X'
+        });
+    };
 
     return (
         <>
-            <Layout style={{ height: '700px' }}>
+            <Layout style={{ height: '930px' }}>
                 <SideBar array={array3} />
                 <Layout className='flex flex-1'>
 
@@ -115,28 +109,33 @@ const Danhmuc = () => {
 
 
                     </Content>
+                    <span className={styles.notify}><PlusCircleOutlined />Thêm sản phẩm thành công <CloseOutlined /></span>
 
                     {showModal && <Modals
-                        title={'Chọn hóa đơn '}
-                        input={[]}
-                        messenge={'Vui lòng chọn tùy chọn trước khi tạo mới đơn hàng'}
-                        content={['Nhập kho mà không cần hóa đơn mua', ' Nhập kho theo hóa đơn']}
+                        title={'Tạo kho mới '}
+                        input={['Mã kho', ' Tên kho']}
+                        messenge={''}
+                        content={[]}
                         buttonContent={['Hủy', 'Tạo']}>
                     </Modals>
                     }
 
 
+
                     <Content style={{ marginBottom: '400px' }}>
                         <div className="" style={{ padding: 24, height: '500px' }}>
                             <Table columns={columns} dataSource={data} />
+                            <Table columns={columns4} dataSource={data4} />
                         </div>
+                        <span className={styles.product}> Có <span className={styles.number}>15</span> sản phẩm</span>
+
                     </Content>
-                    <span className={styles.product}> Có <span className={styles.number}>15</span> sản phẩm</span>
 
 
 
 
                 </Layout>
+
             </Layout>
         </>
     );
