@@ -1,6 +1,6 @@
 .product {
     position: absolute;
-    bottom: 30px;
+    bottom: 50px;
     left: 230px;
 
 
@@ -8,29 +8,4 @@
 
 .number {
     color: blue;
-}
-
-.notify {
-    height: 50px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    gap: 10px;
-
-    position: absolute;
-    width: 272px;
-    height: 72px;
-    left: 1100px;
-    top: 60px;
-    color: #fff;
-
-    /* Secondary/Green */
-
-    background: #09B530;
-    /* Shadow 1 */
-
-    box-shadow: 0px 4px 24px rgba(31, 31, 31, 0.08);
-    border-radius: 4px;
 }

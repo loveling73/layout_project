@@ -7,9 +7,11 @@ import ResetPassword from '../screens/auth/ResetPassword';
 import Depot from '../screens/Depots/Depot';
 import Product from '../screens/Products/Product';
 import Store from '../screens/Store';
-import Danhsach from '../screens/Store/Danhsach';
 import Danhmuc from '../screens/Store/listStore';
 import XuatKho from '../screens/Store/XuatKho';
+import Setting from '../screens/Settings/setting.js';
+
+
 // Public routes
 const publicRoutes = [
     { path: '/', component: Login },
@@ -19,9 +21,10 @@ const publicRoutes = [
     { path: '/depots', component: Depot },
     { path: '/modals', component: Modals },
     { path: '/stores', component: Danhmuc },
-    { path: '/stores/Danhsach', component: Danhsach },
     { path: '/stores/Nhap', component: Store },
-    { path: '/stores/Xuat', component: XuatKho }
+    { path: '/stores/Xuat', component: XuatKho },
+    { path: '/settings', component: Setting }
+
 ];
 
 const privateRoutes = [];
