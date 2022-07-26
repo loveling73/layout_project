@@ -10,6 +10,15 @@ li:hover {
     background-color: rgba(255, 255, 255, 0.18);
 }
 
-.commom1 {
-    min-height: var(--default-layout-height);
+.small {
+    min-height: 100vh;
+}
+
+.large {
+    height: 880px;
+
+}
+
+.a {
+    background-color: red;
 }

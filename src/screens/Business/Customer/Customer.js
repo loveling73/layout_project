@@ -4,21 +4,21 @@ import { Col, Layout, Row, Table } from 'antd';
 
 import React, { useState } from 'react';
 
-import avatar from '../../assets/image/avatar.jpg';
+import avatar from '../../../assets/image/avatar.jpg';
 
-import Button from '../../components/Button/Button';
+import Button from '../../../components/Button/Button';
 
-import Header from '../../components/Header/Header';
+import Header from '../../../components/Header/Header';
 
-import Modals from '../../components/Modals';
+import Modals from '../../../components/Modals/Modals';
 
-import SearchBox from '../../components/SearchBox/SearchBox';
+import SearchBox from '../../../components/SearchBox/SearchBox';
 
-import SideBar from '../../components/SideBar/SideBar';
+import SideBar from '../../../components/SideBar/SideBar';
 
-import { columns, data } from '../../utils/fakeDataM';
+import { columns0, data0 } from '../../../utils/fakeDataCustomer';
 
-import "./index.css";
+import styles from './Customer.module.scss';
 
 
 
@@ -26,7 +26,7 @@ const { Content, Footer } = Layout;
 
 
 
-const Product = () => {
+const Customer = () => {
 
     const [showModal, setShowModal] = useState(false);
 
@@ -52,7 +52,7 @@ const Product = () => {
 
                     <Col span={2}>
 
-                        <SideBar small />
+                        <SideBar large />
 
                     </Col>
 
@@ -71,7 +71,7 @@ const Product = () => {
 
 
 
-                        <Header title='Danh sách sản phẩm' avatar={avatar} />
+                        <Header title='Khách Hàng' avatar={avatar} />
 
                         <Content className="flex align-center items-centent " style={{ padding: 0, height: 40, marginTop: '15px', marginBottom: '50px' }}>
 
@@ -117,9 +117,11 @@ const Product = () => {
 
                             <div className="" style={{ padding: 24, height: '500px' }}>
 
-                                <Table columns={columns} dataSource={data} />
+                                <Table columns={columns0} dataSource={data0} />
+                                <span className={styles.product}> Có <span className={styles.number}>15</span> sản phẩm</span>
 
                             </div>
+
 
                         </Content>
 
@@ -130,7 +132,9 @@ const Product = () => {
 
                     </Layout>
 
+
                 </Layout>
+
 
             </>
 
@@ -149,4 +153,4 @@ const Product = () => {
 
 
 
-export default Product;
+export default Customer;

@@ -3,13 +3,16 @@ import { ShopOutlined, BarChartOutlined, RestOutlined, UserOutlined, RiseOutline
 import React, { useState } from 'react';
 import { AiOutlineDown } from 'react-icons/ai'
 import { BsDot } from 'react-icons/bs'
-import './SideBar.css';
 import avatar from '../../assets/image/avatar.jpg'
-
+import classNamesBind from 'classnames/bind';
+import classNames from 'classnames'
+import styles from './SideBar.module.scss';
 
 const { Sider } = Layout;
+const cx = classNamesBind.bind(styles);
 
 const Menus = [
+
     {
         tilte: 'Tổng quan',
         icon: BarChartOutlined
@@ -71,11 +74,21 @@ const Menus = [
 ]
 
 
-function SideBar() {
+function SideBar({
+
+    small = false,
+    large = false,
+
+
+}) {
+    const classes = cx('bg-dark-purple', {
+        small,
+        large,
+    });
     const [submenuOpen, setSubmenuOpen] = useState(false);
     return (
         <>
-            <div className="bg-dark-purple commom1 p-5 pt-8 w-72" >
+            <div className={classNames('w-96', classes)} >
                 <Row>
                     <Col span={1}>
                         <Image className='rounded-full mt-3'

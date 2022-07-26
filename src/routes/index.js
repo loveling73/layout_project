@@ -4,6 +4,7 @@ import Modals from '../components/Modals';
 import ForgetPassword from '../screens/auth/ForgetPassword';
 import Login from '../screens/auth/Login';
 import ResetPassword from '../screens/auth/ResetPassword';
+import Customer from '../screens/Business/Customer/Customer';
 import Depot from '../screens/Depots/Depot';
 import Product from '../screens/Products/Product';
 import Store from '../screens/Store';
@@ -21,7 +22,8 @@ const publicRoutes = [
     { path: '/stores', component: Danhmuc },
     { path: '/stores/Danhsach', component: Danhsach },
     { path: '/stores/Nhap', component: Store },
-    { path: '/stores/Xuat', component: XuatKho }
+    { path: '/stores/Xuat', component: XuatKho },
+    { path: '/business/Customer', component: Customer }
 ];
 
 const privateRoutes = [];
