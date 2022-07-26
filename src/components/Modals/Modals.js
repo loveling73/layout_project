@@ -34,10 +34,10 @@ const Modals = ({ title, messenge, input, content, buttonContent }) => {
         </div>
         {input.map((item) => (
           <>
-            <div className='mt-5' style={{ marginBottom: '8px' }}>{item}
+            <div className='mt-5'>{item}
               <span className={cx('a')}>*</span>
             </div>
-            <Input size="large" placeholder={item} />
+            <Input className="" size="large" placeholder={item} />
           </>
         ))}
 

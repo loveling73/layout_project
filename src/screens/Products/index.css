@@ -21,7 +21,3 @@
         display: none;
     }
 }
-
-.commom {
-    height: var(--default-layout-height);
-}

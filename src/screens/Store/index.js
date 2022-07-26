@@ -1,1 +1,1 @@
-export { default } from './Nhapkho';
+export { default } from './Store';

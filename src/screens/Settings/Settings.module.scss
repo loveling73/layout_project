@@ -1,0 +1,37 @@
+
+.bg-dark-purple{
+    background-color: #2C3A57;
+}
+
+.bg-blue-white{
+    background-color: #1890FF;
+}
+
+li:hover{
+    background-color: #1890FF;
+}
+
+.w-520{
+    min-width: 520px;
+}
+
+.icon {
+   
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    height: 15px;
+    width: 3px;
+    margin: 8px 15px;
+    
+    /* Primary/Base */
+
+    background: #1890FF;
+    border-radius: 4px;
+}
+
+.minibox{
+    min-width: 100px;    
+    min-height: 6px;
+}
