@@ -1,9 +1,14 @@
-import React from 'react';
-import { MenuFoldOutlined, BellOutlined, DownOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { MenuFoldOutlined, BellOutlined, DownOutlined, CheckCircleOutlined, CloseOutlined } from '@ant-design/icons';
 import styles from './Header.module.scss'
 
 
 function Header({ title, icon, avatar, }) {
+    const [show, setShow] = useState(false);
+
+    function handleShow() {
+        setShow(!show);
+    }
     return (
 
         <header className={styles.header}>
@@ -17,14 +22,15 @@ function Header({ title, icon, avatar, }) {
                     <BellOutlined style={{ fontSize: '25px', marginRight: '30px' }} className="mx-5 my-3 " />
                 </div>
                 <div className={styles.user}>
-                    <img className={styles.avatar} alt='avatar' src={avatar} />
+                    <img className={styles.avatar} alt='avatar' src={avatar} onClick={handleShow} />
                     <div className={styles.info}>
-                        <span style={{ fontWeight: '600' }}>Phan Đức Mạnh</span>
+                        <span style={{ fontWeight: '600' }} >Phan Đức Mạnh</span>
                         <span style={{ fontWeight: '300' }}>Quản trị viên</span>
                     </div>
                     <DownOutlined className={styles.downIcon} />
                 </div>
             </nav>
+            {show && <div className={styles.inform}> <CheckCircleOutlined /> Tạo thành công <CloseOutlined /> </div>}
         </header>
     );
 }

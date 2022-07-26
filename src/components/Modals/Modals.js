@@ -1,12 +1,12 @@
-import { Input, Modal, Button, Radio } from 'antd';
-import React, { useState } from 'react';
-import styles from './Modals.module.scss'
+import { PlusOutlined } from '@ant-design/icons';
+import { Button, Input, Modal, Radio } from 'antd';
 import classNames from 'classnames/bind';
+import React, { useState } from 'react';
+import styles from './Modals.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Modals = ({ title, messenge, input, content, buttonContent }) => {
-
+const Modals = ({ title, messenge, input, content, buttonContent, add = false, type }) => {
   const [isModalVisible, setIsModalVisible] = useState(true);
   const showModal = () => {
     setIsModalVisible(true);
@@ -52,12 +52,13 @@ const Modals = ({ title, messenge, input, content, buttonContent }) => {
           </div>
         ))}
 
-
+        {add && <div className={cx('add')}><PlusOutlined /> <div style={{ marginLeft: '15px' }}>Thêm tài khoản ngân hàng</div></div>}
         <div className={cx('buttons')}>
           <div className='flex justify-center items-center'>
             {buttonContent.map((item, index) => (
               <Button
-                type={index < 1 ? "" : "primary"}
+                key={index}
+                type={index < 1 ? "" : `${type}`}
                 className={cx('action_btn')}
                 onClick={() => handleClose()}
               >
@@ -65,7 +66,9 @@ const Modals = ({ title, messenge, input, content, buttonContent }) => {
               </Button>
             ))}
           </div>
+
         </div>
+
       </Modal>
     </>
   );

@@ -37,3 +37,40 @@ span.a {
     margin-left: 5px;
     margin-right: 5px;
 }
+
+.add {
+    width: 240px;
+    height: 22px;
+
+    /* Body/Body-2-M */
+
+    font-family: 'Averta';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+    text-align: center;
+
+    /* Primary/Base */
+
+    color: #1890FF;
+
+
+    /* Inside auto layout */
+
+    display: flex;
+    order: 1;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translateX(50%);
+
+
+}
