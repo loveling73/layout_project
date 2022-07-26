@@ -5,7 +5,7 @@ import SideBar from '../../components/SideBar/SideBar';
 import { Button } from 'antd';
 import { Input } from 'antd';
 import { Space, Table, Tag, Modal } from 'antd'
-import { data1, data2, columns1,columns2,arrayitems } from '../../utils/fakeDataN';
+import { data1, data2, columns1, columns2, arrayitems } from '../../utils/fakeDataN';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -30,7 +30,7 @@ const Depot = () => {
         <>
             <Layout  >
 
-                <SideBar array={arrayitems}/>
+                <SideBar array={arrayitems} />
                 <Layout>
 
                     <Header className="site-layout-sub-header-background" style={{ padding: 0, height: 130 }}>

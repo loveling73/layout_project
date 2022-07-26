@@ -104,7 +104,7 @@ function SideBar({
                         <Image className='rounded-full mt-3'
                             preview={{ visible: false }}
                             width={40}
-                            src="https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-1/282647232_3372145673013688_1051696226724793886_n.jpg?stp=dst-jpg_p240x240&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=afQt19GgwJ4AX_-egDC&_nc_ht=scontent.fhan3-1.fna&oh=00_AT_vN3BSoIL8KgPZL6enPTcEqgRkH2FsEo7hkL6Bps-YgA&oe=62D5D37C"
+                            src={avatar}
 
                         />
                     </Col>
@@ -120,7 +120,7 @@ function SideBar({
                             <li key={index} className="relative text-gray-300 text-md flex item-center cursor-pointer gap-x-4 p-2 hover:bg-blue-white rounded-md mt-2">
                                 <span className="block float-left"> {React.createElement(menu.icon)} </span>
                                 <a href={menu.link}>
-                                <span className="mt-1 font-medium "> {menu.tilte} </span>
+                                    <span className="mt-1 font-medium "> {menu.tilte} </span>
                                 </a>
                                 {menu.submenu && (
                                     <div className="absolute inset-y-5 right-2">
@@ -136,7 +136,7 @@ function SideBar({
                                             <li key={index} className="text-gray-300 text-base flex item-center cursor-pointer gap-x-4 p-2 hover:bg-blue-white rounded-md ml-2">
                                                 <span> <BsDot /> </span>
                                                 <a href={submenuItems.link}>
-                                                {submenuItems.tilte}
+                                                    {submenuItems.tilte}
                                                 </a>
                                             </li>
                                         </div>

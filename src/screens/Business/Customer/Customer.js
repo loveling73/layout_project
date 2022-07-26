@@ -20,6 +20,7 @@ import { columns0, data0 } from '../../../utils/fakeDataCustomer';
 
 import styles from './Customer.module.scss';
 
+import classNames from 'classnames'
 
 
 const { Content, Footer } = Layout;
@@ -52,7 +53,7 @@ const Customer = () => {
 
                     <Col span={2}>
 
-                        <SideBar large />
+                        <SideBar small />
 
                     </Col>
 
@@ -63,11 +64,11 @@ const Customer = () => {
 
 
 
-                <Layout className='commom'>
+                <Layout >
 
 
 
-                    <Layout className='flex flex-1'>
+                    <Layout className={classNames('flex flex-1')} >
 
 
 
@@ -113,12 +114,12 @@ const Customer = () => {
 
 
 
-                        <Content style={{ marginBottom: '400px' }}>
+                        <Content  >
 
-                            <div className="" style={{ padding: 24, height: '500px' }}>
+                            <div style={{ padding: 24 }} className={styles.content}>
 
                                 <Table columns={columns0} dataSource={data0} />
-                                <span className={styles.product}> Có <span className={styles.number}>15</span> sản phẩm</span>
+                                <div className={styles.product}> Có <span className={styles.number}>15</span> sản phẩm</div>
 
                             </div>
 

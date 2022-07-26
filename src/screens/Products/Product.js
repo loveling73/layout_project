@@ -29,7 +29,7 @@ const Product = () => {
             <>
                 <Row>
                     <Col span={2}>
-                        <SideBar className='' />
+                        <SideBar small />
                     </Col>
                 </Row>
 
@@ -42,10 +42,11 @@ const Product = () => {
                         <Content className="flex align-center items-centent " style={{ padding: 0, height: 40, marginTop: '15px', marginBottom: '50px' }}>
 
 
-                            <SideBar small />
+                            <SearchBox title={'Mã hàng'} small ></SearchBox>
+                            <SearchBox title={'Tên hàng'} large></SearchBox>
 
                             <Button secondary leftIcon={<SearchOutlined />}> Tìm kiếm</Button>
-                            <Button primary leftIcon={<PlusOutlined />} onClick={handleChange}> Tạo sản phẩm</Button>
+                            <Button primary leftIcon={<PlusOutlined />} onClick={handleChange}> Tạo kho</Button>
 
 
                         </Content>

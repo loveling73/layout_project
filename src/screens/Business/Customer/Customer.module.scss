@@ -1,8 +1,6 @@
 .product {
-    position: absolute;
-    bottom: -150px;
-    left: 250px;
-
+    text-align: left;
+    transform: translateY(-48px);
 
 }
 
@@ -13,4 +11,9 @@
 .footer {
     background-color: #333;
     height: var(--default-layout-footer);
+}
+
+.content {
+    overflow-y: auto;
+    height: 600px;
 }
