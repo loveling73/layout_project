@@ -1,0 +1,19 @@
+.product {
+    text-align: left;
+    transform: translateY(-48px);
+
+}
+
+.number {
+    color: blue;
+}
+
+.footer {
+    background-color: #333;
+    height: var(--default-layout-footer);
+}
+
+.content {
+    overflow-y: auto;
+    height: 600px;
+}

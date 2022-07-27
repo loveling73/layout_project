@@ -11,6 +11,8 @@ import Store from '../screens/Store';
 import Danhmuc from '../screens/Store/listStore';
 import XuatKho from '../screens/Store/XuatKho';
 import Setting from '../screens/Settings/setting.js';
+import Quote from '../screens/Business/Quote/Quote';
+import Order from '../screens/Business/Orders/Order';
 
 
 // Public routes
@@ -25,6 +27,8 @@ const publicRoutes = [
     { path: '/stores/Nhap', component: Store },
     { path: '/stores/Xuat', component: XuatKho },
     { path: '/business/Customer', component: Customer },
+    { path: '/business/Quote', component: Quote },
+    { path: '/business/Order', component: Order },
     { path: '/settings', component: Setting }
 
 ];
