@@ -32,33 +32,33 @@ const columns0 = [
 
     },
     {
-        title: 'Tên khách hàng',
+        title: 'Mã đơn hàng',
         dataIndex: 'age',
         key: 'age',
     },
     {
-        title: 'Tên hàng',
+        title: 'Khách hàng',
         dataIndex: 'address',
         key: 'address',
     },
     {
-        title: 'Tài khoản Ngân hàng',
+        title: 'Phụ trách kinh doanh',
         key: 'tags',
         dataIndex: 'tags',
 
     },
     {
-        title: 'Mã số thuế',
+        title: 'Ưu tiên',
+        dataIndex: 'priority',
+        key: 'address',
+    },
+    {
+        title: 'Hạn giao hàng',
         dataIndex: 'date',
         key: 'address',
     },
     {
-        title: 'Email',
-        dataIndex: 'date',
-        key: 'address',
-    },
-    {
-        title: 'Số điện thoại',
+        title: 'Ngày tạo',
         dataIndex: 'phone',
         key: 'phone',
     },
@@ -79,75 +79,96 @@ const data0 = [
     {
         key: '1',
         name: '1',
-        age: 'Thép Anh Khoa',
-        address: '092335442365 - Thép Anh Khoa - Ngâ..',
-        tags: '+84 889 988 123',
-        date: 'thepanhkhoa124@gmail.com',
-        phone: '+84 667 778 889'
+        age: 'DH003',
+        priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'Phạm Mĩ Tâm',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
     },
     {
         key: '2',
         name: '2',
-        age: 'Thép Anh Khoa',
-        address: '092335442365 - Thép Anh Khoa - Ngâ..',
-        tags: '+84 889 988 123',
-        date: 'thepanhkhoa124@gmail.com',
-        phone: '+84 667 778 889'
+        age: 'DH003',
+        priority: <div className={styles.priority1}> Ưu tiên</div>,
+        address: 'Phan Đức Mạnh',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
     },
     {
         key: '3',
         name: '3',
-        age: 'Thép Anh Khoa',
-        address: '092335442365 - Thép Anh Khoa - Ngâ..',
-        tags: '+84 889 988 123',
-        date: 'thepanhkhoa124@gmail.com',
-        phone: '+84 667 778 889'
+        age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'Hồ Tấn Tài',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
     },
     {
         key: '4',
         name: '4',
-        age: 'Thép Anh Khoa',
-        address: '092335442365 - Thép Anh Khoa - Ngâ..',
-        tags: '+84 889 988 123',
-        date: 'thepanhkhoa124@gmail.com',
-        phone: '+84 667 778 889'
+        age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'Nguyễn Thế Nghĩa',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
     },
     {
         key: '5',
         name: '5',
-        age: 'Thép Anh Khoa',
-        address: '092335442365 - Thép Anh Khoa - Ngâ..',
-        tags: '+84 889 988 123',
-        date: 'thepanhkhoa124@gmail.com',
-        phone: '+84 667 778 889'
+        age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'Nguyễn Việt Thắng',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
     },
     {
         key: '6',
         name: '6',
-        age: 'Thép Anh Khoa',
-        address: '092335442365 - Thép Anh Khoa - Ngâ..',
-        tags: '+84 889 988 123',
-        date: 'thepanhkhoa124@gmail.com',
-        phone: '+84 667 778 889'
+        age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'Nguyễn Thị Anh',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
     },
     {
         key: '7',
         name: '7',
-        age: 'Thép Anh Khoa',
-        address: '092335442365 - Thép Anh Khoa - Ngâ..',
-        tags: '+84 889 988 123',
-        date: 'thepanhkhoa124@gmail.com',
-        phone: '+84 667 778 889'
+        age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'La Văn Đức',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
     },
     {
         key: '7',
-        name: '7',
-        age: 'Thép Anh Khoa',
-        address: '092335442365 - Thép Anh Khoa - Ngâ..',
-        tags: '+84 889 988 123',
-        date: 'thepanhkhoa124@gmail.com',
-        phone: '+84 667 778 889'
+        name: '8',
+        age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'Đùng Văn Phá',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
     },
+    {
+        key: '7',
+        name: '9',
+        age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'Đùng Văn Phá',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
+    },
+    {
+        key: '8',
+        name: '10',
+        age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
+        address: 'Đùng Văn Phá',
+        tags: 'Kinh doanh',
+        date: '28/06/2022',
+        phone: '27/4/2022'
+    },
+
 
 
 ];
@@ -247,11 +268,11 @@ const Order = () => {
 
                             type={'primary'}
 
-                            title={'Húy báo giá'}
+                            title={'Xóa sản phẩm'}
 
                             input={[]}
 
-                            messenge={'Bạn có thực sự muốn hủy tạo mới báo giá này không?'}
+                            messenge={'Bạn có thực sự muốn hủy xóa sản phẩm này không ?'}
 
                             content={[]}
 

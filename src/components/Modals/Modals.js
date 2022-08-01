@@ -3,10 +3,11 @@ import { Button, Input, Modal, Radio } from 'antd';
 import classNames from 'classnames/bind';
 import React, { useState } from 'react';
 import styles from './Modals.module.scss';
-
+import { Select } from 'antd';
+const { Option } = Select;
 const cx = classNames.bind(styles);
 
-const Modals = ({ title, messenge, input, content, buttonContent, add = false, type }) => {
+const Modals = ({ title, messenge, input, content, buttonContent, add = false, type, select }) => {
   const [isModalVisible, setIsModalVisible] = useState(true);
   const showModal = () => {
     setIsModalVisible(true);
@@ -53,6 +54,22 @@ const Modals = ({ title, messenge, input, content, buttonContent, add = false, t
         ))}
 
         {add && <div className={cx('add')}><PlusOutlined /> <div style={{ marginLeft: '15px' }}>Thêm tài khoản ngân hàng</div></div>}
+        {select && <div style={{ marginTop: '15px' }}>
+          <Select
+            defaultValue="Chọn báo giá"
+            style={{
+              width: 480,
+            }}
+
+          >
+            <Option value="jack">Jack</Option>
+            <Option value="lucy">Lucy</Option>
+            <Option value="disabled" disabled>
+              Disabled
+            </Option>
+            <Option value="Yiminghe">yiminghe</Option>
+          </Select>
+        </div>}
         <div className={cx('buttons')}>
           <div className='flex justify-center items-center'>
             {buttonContent.map((item, index) => (
@@ -68,6 +85,8 @@ const Modals = ({ title, messenge, input, content, buttonContent, add = false, t
           </div>
 
         </div>
+
+
 
       </Modal>
     </>

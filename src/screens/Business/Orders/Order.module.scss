@@ -17,3 +17,55 @@
     overflow-y: auto;
     height: 600px;
 }
+
+.priority {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 8px;
+
+    width: 120px;
+    height: 28px;
+
+    background: #E8F2FF;
+    border: 1px solid #0072F8;
+    border-radius: 4px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.priority1 {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 8px;
+
+    width: 120px;
+    height: 28px;
+
+    background: #EDFFF6;
+    border: 1px solid #09B530;
+    border-radius: 4px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

@@ -13,6 +13,7 @@ import XuatKho from '../screens/Store/XuatKho';
 import Setting from '../screens/Settings/setting.js';
 import Quote from '../screens/Business/Quote/Quote';
 import Order from '../screens/Business/Orders/Order';
+import Seller from '../screens/Business/Seller/Seller';
 
 
 // Public routes
@@ -29,6 +30,7 @@ const publicRoutes = [
     { path: '/business/Customer', component: Customer },
     { path: '/business/Quote', component: Quote },
     { path: '/business/Order', component: Order },
+    { path: '/business/Seller', component: Seller },
     { path: '/settings', component: Setting }
 
 ];
