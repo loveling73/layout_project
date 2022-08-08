@@ -17,12 +17,12 @@ import SearchBox from '../../../components/SearchBox/SearchBox';
 import SideBar from '../../../components/SideBar/SideBar';
 
 
-import styles from './Receipts.module.scss';
+import styles from './Order.module.scss';
 
 import classNames from 'classnames';
 
 
-const { Content } = Layout;
+const { Content, Footer } = Layout;
 
 const columns0 = [
     {
@@ -32,7 +32,7 @@ const columns0 = [
 
     },
     {
-        title: 'Mã số',
+        title: 'Mã đơn hàng',
         dataIndex: 'age',
         key: 'age',
     },
@@ -41,20 +41,26 @@ const columns0 = [
         dataIndex: 'address',
         key: 'address',
     },
+
     {
-        title: 'Loại phiếu',
+        title: 'Ưu tiên',
+        dataIndex: 'priority',
+        key: 'address',
+    },
+    {
+        title: 'Trạng thái thanh toán',
         key: 'tags',
         dataIndex: 'tags',
 
     },
     {
-        title: 'Số tiền',
-        dataIndex: 'priority',
+        title: ' Thời hạn thanh toán',
+        dataIndex: 'date',
         key: 'address',
     },
     {
-        title: 'Tài khoản ngân hàng',
-        dataIndex: 'date',
+        title: ' Hạn giao hàng',
+        dataIndex: 'deadline',
         key: 'address',
     },
     {
@@ -62,17 +68,7 @@ const columns0 = [
         dataIndex: 'phone',
         key: 'phone',
     },
-    {
-        title: 'Thao tác',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <EyeOutlined className='p-1 rounded-full bg-orange-400 text-white' />
-                <EditOutlined className='p-1 rounded-full bg-green-600 text-white' />
-                <DeleteOutlined className='p-1 rounded-full bg-red-600 text-white' />
-            </Space>
-        ),
-    },
+
 ];
 
 const data0 = [
@@ -82,98 +78,108 @@ const data0 = [
         age: 'DH003',
         priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'Phạm Mĩ Tâm',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '2',
         name: '2',
         age: 'DH003',
-        priority: <div className={styles.priority1}> Ưu tiên</div>,
+        priority: <div className={styles.priority}> Không Ưu tiên</div>,
         address: 'Phan Đức Mạnh',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '3',
         name: '3',
         age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'Hồ Tấn Tài',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '4',
         name: '4',
         age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'Nguyễn Thế Nghĩa',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '5',
         name: '5',
         age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'Nguyễn Việt Thắng',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '6',
         name: '6',
         age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'Nguyễn Thị Anh',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '7',
         name: '7',
         age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'La Văn Đức',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '7',
         name: '8',
         age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'Đùng Văn Phá',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '7',
         name: '9',
         age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'Đùng Văn Phá',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
     {
         key: '8',
         name: '10',
         age: 'DH003', priority: <div className={styles.priority}>Không ưu tiên</div>,
         address: 'Đùng Văn Phá',
-        tags: 'Kinh doanh',
-        date: '28/06/2022',
-        phone: '27/4/2022'
+        tags: <div className={styles.priority1}> Đã thanh toán</div>,
+        deadline: '30/6/2022',
+        date: '30/6/2022',
+        phone: '25/6/2022'
     },
 
 
 
 ];
 
-const Receipts = () => {
+const Order1 = () => {
 
     const [showModal, setShowModal] = useState(false);
     const [showModal1, setShowModal1] = useState(false);
@@ -222,13 +228,13 @@ const Receipts = () => {
 
 
 
-                        <Header title='Phiếu thu ' avatar={avatar} />
+                        <Header title='Đơn đặt hàng ' avatar={avatar} />
 
                         <Content className="flex align-center items-centent " style={{ padding: 0, height: 40, marginTop: '15px', marginBottom: '50px' }}>
 
 
 
-
+                            <SearchBox title={'Chọn trạng thái thanh toán'} small ></SearchBox>
                             <SearchBox title={'Khách hàng'} small ></SearchBox>
 
                             <SearchBox title={'Từ ngày                       --->                    Đến ngày '} large></SearchBox>
@@ -236,9 +242,9 @@ const Receipts = () => {
 
 
 
-                            <Button secondary leftIcon={<SearchOutlined />} style={{ margin: '0px 30px' }}> Tìm kiếm</Button>
+                            <Button secondary leftIcon={<SearchOutlined />}> Tìm kiếm</Button>
 
-                            <Button primary leftIcon={<PlusOutlined />} onClick={handleChange}> Tạo phiếu thu</Button>
+                            {/* <Button primary leftIcon={<PlusOutlined />} onClick={handleChange}> Tạo đơn mới</Button> */}
 
 
 
@@ -248,18 +254,17 @@ const Receipts = () => {
 
 
                         {showModal && <Modals
-
                             type={'primary'}
-                            mes='Chọn hóa đơn bán'
-                            title={'Tạo mới phiếu thu'}
+
+                            title={'Tạo đơn bán hàng'}
 
                             select
 
                             input={[]}
 
-                            messenge={'Vui lòng chọn hóa đơn bán trước khi tạo phiếu thu'}
+                            messenge={'Vui lòng chọn tùy chọn trước khi tạo mới đơn bán hàng'}
 
-                            content={[]}
+                            content={['Không sử dụng mẫu báo giá ', 'Sử dụng mẫu báo giá']}
 
                             buttonContent={['Hủy', 'Tiếp tục']}>
 
@@ -271,11 +276,11 @@ const Receipts = () => {
 
                             type={'primary'}
 
-                            title={'Hủy phiếu thu'}
+                            title={'Xóa sản phẩm'}
 
                             input={[]}
 
-                            messenge={'Bạn có thực sự muốn hủy phiếu thu này không  ?'}
+                            messenge={'Bạn có thực sự muốn hủy xóa sản phẩm này không ?'}
 
                             content={[]}
 
@@ -326,4 +331,4 @@ const Receipts = () => {
 
 
 
-export default Receipts;
+export default Order1;

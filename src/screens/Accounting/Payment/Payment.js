@@ -17,7 +17,7 @@ import SearchBox from '../../../components/SearchBox/SearchBox';
 import SideBar from '../../../components/SideBar/SideBar';
 
 
-import styles from './Receipts.module.scss';
+import styles from './Payment.module.scss';
 
 import classNames from 'classnames';
 
@@ -173,7 +173,7 @@ const data0 = [
 
 ];
 
-const Receipts = () => {
+const Payment = () => {
 
     const [showModal, setShowModal] = useState(false);
     const [showModal1, setShowModal1] = useState(false);
@@ -222,7 +222,7 @@ const Receipts = () => {
 
 
 
-                        <Header title='Phiếu thu ' avatar={avatar} />
+                        <Header title='Phiếu chi ' avatar={avatar} />
 
                         <Content className="flex align-center items-centent " style={{ padding: 0, height: 40, marginTop: '15px', marginBottom: '50px' }}>
 
@@ -238,7 +238,7 @@ const Receipts = () => {
 
                             <Button secondary leftIcon={<SearchOutlined />} style={{ margin: '0px 30px' }}> Tìm kiếm</Button>
 
-                            <Button primary leftIcon={<PlusOutlined />} onClick={handleChange}> Tạo phiếu thu</Button>
+                            <Button primary leftIcon={<PlusOutlined />} onClick={handleChange}> Tạo phiếu chi</Button>
 
 
 
@@ -271,11 +271,11 @@ const Receipts = () => {
 
                             type={'primary'}
 
-                            title={'Hủy phiếu thu'}
+                            title={'Hủy phiếu chi'}
 
                             input={[]}
 
-                            messenge={'Bạn có thực sự muốn hủy phiếu thu này không  ?'}
+                            messenge={'Bạn có thực sự muốn hủy phiếu chi này không  ?'}
 
                             content={[]}
 
@@ -326,4 +326,4 @@ const Receipts = () => {
 
 
 
-export default Receipts;
+export default Payment;

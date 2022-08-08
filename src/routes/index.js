@@ -14,7 +14,11 @@ import Setting from '../screens/Settings/setting.js';
 import Quote from '../screens/Business/Quote/Quote';
 import Order from '../screens/Business/Orders/Order';
 import Seller from '../screens/Business/Seller/Seller';
-
+import Receipts from '../screens/Accounting/Receipts/Receipts';
+import Payment from '../screens/Accounting/Payment';
+import Seller1 from '../screens/Report/Seller/Seller';
+import Order1 from '../screens/Report/Order/Order';
+import Staff from '../screens/Staff/Staff';
 
 // Public routes
 const publicRoutes = [
@@ -31,6 +35,11 @@ const publicRoutes = [
     { path: '/business/Quote', component: Quote },
     { path: '/business/Order', component: Order },
     { path: '/business/Seller', component: Seller },
+    { path: '/accounting/Receipt', component: Receipts },
+    { path: '/accounting/Payment', component: Payment },
+    { path: '/report/Seller', component: Seller1 },
+    { path: '/report/Order', component: Order1 },
+    { path: '/Staff', component: Staff },
     { path: '/settings', component: Setting }
 
 ];

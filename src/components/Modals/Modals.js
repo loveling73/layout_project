@@ -7,7 +7,7 @@ import { Select } from 'antd';
 const { Option } = Select;
 const cx = classNames.bind(styles);
 
-const Modals = ({ title, messenge, input, content, buttonContent, add = false, type, select }) => {
+const Modals = ({ title, messenge, input, content, buttonContent, add = false, type, select, mes, detail = false, info }) => {
   const [isModalVisible, setIsModalVisible] = useState(true);
   const showModal = () => {
     setIsModalVisible(true);
@@ -41,7 +41,15 @@ const Modals = ({ title, messenge, input, content, buttonContent, add = false, t
             <Input className="" size="large" placeholder={item} />
           </>
         ))}
+        {detail && <div>
+          {Object.keys(info).map(item => (
+            <li key={item} style={{ marginTop: '20px' }}>
+              <strong style={{ display: 'inline-block', width: '120px' }}> {item}</strong><span style={{ float: 'right' }}>{info[item]}</span>
+            </li>
+          ))}
 
+
+        </div>}
 
         {content.map((item, index) => (
           <div className="my-10">
@@ -56,18 +64,18 @@ const Modals = ({ title, messenge, input, content, buttonContent, add = false, t
         {add && <div className={cx('add')}><PlusOutlined /> <div style={{ marginLeft: '15px' }}>Thêm tài khoản ngân hàng</div></div>}
         {select && <div style={{ marginTop: '15px' }}>
           <Select
-            defaultValue="Chọn báo giá"
+            defaultValue={mes}
             style={{
               width: 480,
             }}
 
           >
-            <Option value="jack">Jack</Option>
-            <Option value="lucy">Lucy</Option>
+            <Option value="jack">Sắt</Option>
+            <Option value="lucy">Đồng</Option>
             <Option value="disabled" disabled>
-              Disabled
+              Vàng
             </Option>
-            <Option value="Yiminghe">yiminghe</Option>
+            <Option value="Yiminghe">Kim cương</Option>
           </Select>
         </div>}
         <div className={cx('buttons')}>
@@ -75,7 +83,7 @@ const Modals = ({ title, messenge, input, content, buttonContent, add = false, t
             {buttonContent.map((item, index) => (
               <Button
                 key={index}
-                type={index < 1 ? "" : `${type}`}
+                type={index <= 1 ? "primary" : `${type}`}
                 className={cx('action_btn')}
                 onClick={() => handleClose()}
               >

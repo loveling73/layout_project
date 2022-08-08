@@ -6,10 +6,11 @@ import styles from './SearchBox.module.scss';
 const cx = classNames.bind(styles);
 
 
-function SearchBox({ title, large = false, small = false }) {
+function SearchBox({ title, large = false, small = false,tiny = false }) {
     const classes = cx({
         small,
         large,
+        tiny
     });
     return (
         <div>
