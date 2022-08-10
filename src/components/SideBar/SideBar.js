@@ -119,7 +119,7 @@ function SideBar({
                         <>
                             <li key={index} className="relative text-gray-300 text-md flex item-center cursor-pointer gap-x-4 p-2 hover:bg-blue-white rounded-md mt-2">
                                 <span className="block float-left"> {React.createElement(menu.icon)} </span>
-                                <a href={menu.link}>
+                                <a href={menu.link} style={{ color: '#B1B5C4' }}>
                                     <span className="mt-1 font-medium "> {menu.tilte} </span>
                                 </a>
                                 {menu.submenu && (
@@ -135,7 +135,7 @@ function SideBar({
                                         <div className="">
                                             <li key={index} className="text-gray-300 text-base flex item-center cursor-pointer gap-x-4 p-2 hover:bg-blue-white rounded-md ml-2">
                                                 <span> <BsDot /> </span>
-                                                <a href={submenuItems.link}>
+                                                <a href={submenuItems.link} style={{ color: '#B1B5C4' }}>
                                                     {submenuItems.tilte}
                                                 </a>
                                             </li>
